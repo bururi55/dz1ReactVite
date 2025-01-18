@@ -1,26 +1,35 @@
+import React from "react";
 import "./App.css";
 
 function App() {
   const currentYear = new Date().getFullYear(); // Императивный стиль
 
-  return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.jsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        {/* Декларативный стиль */}
-        <p>Current Year: {currentYear}</p>
-      </header>
-    </div>
+  return React.createElement(
+    "div",
+    { className: "App" },
+    React.createElement(
+      "header",
+      { className: "App-header" },
+      React.createElement(
+        "p",
+        null,
+        "Edit ",
+        React.createElement("code", null, "src/App.jsx"),
+        " and save to reload."
+      ),
+      React.createElement(
+        "a",
+        {
+          className: "App-link",
+          href: "https://reactjs.org",
+          target: "_blank",
+          rel: "noopener noreferrer",
+        },
+        "Learn React"
+      ),
+      // Декларативный стиль
+      React.createElement("p", null, "Current Year: ", currentYear)
+    )
   );
 }
 
